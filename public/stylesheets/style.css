@@ -1,0 +1,16 @@
+canvas_holder {
+	/*text-align: center;*/
+}
+canvas {
+	border: 1px solid red;
+}
+#signin {
+	position: absolute;
+	left:50%;
+	margin-left:-80px;
+	margin-top: 200px;
+	width:500px
+	-webkit-animation-duration: 3s;
+    -webkit-animation-delay: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
