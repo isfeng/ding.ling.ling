@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,16 +5,16 @@
     <meta charset="utf-8" />
     <meta name="google" content="notranslate" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link rel='stylesheet' href='public/stylesheets/reset.css' />
-	<link rel='stylesheet' href='public/stylesheets/animate-custom.css' />
-    <link rel='stylesheet' href='public/stylesheets/style.css' />
+	<link rel='stylesheet' href='/stylesheets/reset.css' />
+	<link rel='stylesheet' href='/stylesheets/animate-custom.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src="http://code.createjs.com/easeljs-0.6.1.min.js"></script>
-    <script src="public/javascripts/underscore-min.js"></script>
-    <script src="public/javascripts/profile.js"></script>
+    <script src="/javascripts/underscore-min.js"></script>
+    <script src="/javascripts/profile.js"></script>
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
-      api_key: pv84horqaryb
+      api_key: 1qj6x0r7pg21
       onLoad: onLinkedInLoad
-      authorize: true
+      authorize: false
     </script>
 </head>
 <body onload="init()">
@@ -100,8 +99,9 @@
 		function init() {
 			canvas = document.getElementById("canvax");
 			stage = new createjs.Stage(canvas);
-			canvas.width = window.innerWidth - 10;
-        	canvas.height = window.innerHeight - 10;
+			canvas.width = window.innerWidth-10;
+        	canvas.height = window.innerHeight-10;
+
         	stage.addEventListener("stagemousemove", function(evt) {
 	            mouseX = evt.stageX;
 	            mouseY = evt.stageY;
