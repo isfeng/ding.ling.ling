@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ding.ling.ling~ding.ling.ling</title>
+    <title>ding.ling.ling ~ you're actually at the center of a network, MORE THAN 2 MILLION PEOPLE STRONG.</title>
     <meta charset="utf-8" />
     <meta name="google" content="notranslate" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,7 +35,7 @@
 	
 	<script type="text/javascript">
 		
-		var canvas, stage, me, mouseX, mouseY, connections=[];
+		var canvas, stage, me, mouseX, mouseY, connections=[], max_distance;
 
 		function onLinkedInLoad() {
 			IN.Event.on(IN, "auth", function() {
@@ -73,6 +73,10 @@
 			me.x = _.random(0, canvas.width-100);
 			me.y = _.random(0, canvas.height-100);
 			stage.addChild(me);
+
+			_max([], function(distance){
+				max_distance = distance;
+			});
 		};
 
 		function show_connections(conns) {
@@ -91,12 +95,10 @@
 		}
 
 		function tick(event) {
-			if (mouseX) {
-				_.each(connections, function(conn) {
-					conn.arround(me.x, me.y);
-				});
-				stage.update(event);
-			}		
+			_.each(connections, function(conn) {
+				conn.arround(me.x, me.y, max_distance - 100);
+			});
+			stage.update(event);
 		}
 
 		function init() {

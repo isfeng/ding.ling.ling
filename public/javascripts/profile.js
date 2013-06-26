@@ -3,7 +3,7 @@ function Profile(img, x, y, easing) {
   this.image.x = x;
   this.image.y = y;
   this.easing = easing;
-  this.vr = Math.PI*2/_.random(300, 360);
+  this.vr = Math.PI * 2 / _.random(360, 420);
   this.cosvr = Math.cos(this.vr);
   this.sinvr = Math.sin(this.vr);
 }
@@ -12,13 +12,13 @@ Profile.prototype.draw = function(stage) {
   stage.addChild(this.image);
 };
 
-Profile.prototype.arround = function(mouseX, mouseY) {
+Profile.prototype.arround = function(mouseX, mouseY, max_distance) {
   var dx = mouseX - this.image.x;
   var dy = mouseY - this.image.y;
-  if (Math.sqrt(dx * dx + dy * dy) > 500) {
+  if (Math.sqrt(dx * dx + dy * dy) > max_distance) {
     this.image.x += dx * this.easing;
     this.image.y += dy * this.easing;
-  } else if (Math.sqrt(dx * dx + dy * dy) < 100) {
+  } else if (Math.sqrt(dx * dx + dy * dy) < 120) {
     this.image.x -= dx * this.easing;
     this.image.y -= dy * this.easing;
   }
