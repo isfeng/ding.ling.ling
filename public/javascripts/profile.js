@@ -1,14 +1,19 @@
 function Profile(img, x, y, easing) {
-  this.bitmap = new createjs.Bitmap(img);
+  this.shape = new createjs.Shape();
+  var shape = this.shape;
+  shape.x = x;
+  shape.y = y;
+
+  var image = new Image();
+  image.src = img;
+  image.onload = function() {
+    shape.graphics.beginStroke("rgba(0,0,0,1)").beginBitmapFill(image).drawCircle(40, 40, 40).endStroke();
+  };
+
   this.easing = easing;
   this.vr = Math.PI * 2 / _.random(360, 420);
   this.cosvr = Math.cos(this.vr);
   this.sinvr = Math.sin(this.vr);
-
-  this.shape = new createjs.Shape();
-  this.shape.graphics.beginStroke("rgba(0,0,0,1)").beginBitmapFill(this.bitmap.image).drawCircle(40, 40, 40).endStroke();
-  this.shape.x = x;
-  this.shape.y = y;
 }
 
 Profile.prototype.draw = function(stage) {
