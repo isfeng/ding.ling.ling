@@ -12,7 +12,19 @@ canvas {
 	width:300px;
 	text-align: center;
 	/*border: 1px solid black;*/
-	-webkit-animation-duration: 3s;
+	animation-duration: 3s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-duration: 3s;
     -webkit-animation-delay: 2s;
     -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-duration: 3s;
+    -moz-animation-delay: 2s;
+    -moz-animation-iteration-count: infinite;
+
+    -o-animation-duration: 3s;
+    -o-animation-delay: 2s;
+    -o-animation-iteration-count: infinite;
 }
