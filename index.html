@@ -15,7 +15,7 @@
     <script type="text/javascript" src="http://platform.linkedin.com/in.js">
       api_key: pv84horqaryb
       onLoad: onLinkedInLoad
-      authorize: false
+      authorize: true
     </script>
 </head>
 <body onload="init()">
@@ -100,8 +100,8 @@
 		function init() {
 			canvas = document.getElementById("canvax");
 			stage = new createjs.Stage(canvas);
-			canvas.width = window.innerWidth;
-        	canvas.height = window.innerHeight;
+			canvas.width = window.innerWidth - 10;
+        	canvas.height = window.innerHeight - 10;
 
         	stage.addEventListener("stagemousemove", function(evt) {
 	            mouseX = evt.stageX;
