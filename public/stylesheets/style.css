@@ -7,10 +7,11 @@ canvas {
 #signin {
 	position: absolute;
 	left:50%;
-	margin-left:-150px;
+	margin-left:-200px;
 	margin-top: 200px;
-	width:300px;
+	width:400px;
 	text-align: center;
+    /*font-size: 13px;*/
 	/*border: 1px solid black;*/
 	animation-duration: 3s;
     animation-delay: 2s;
