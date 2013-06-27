@@ -99,7 +99,8 @@
 
 		function tick(event) {
 			_.each(connections, function(conn) {
-				conn.arround(me.x, me.y, max_distance - 100);
+				if(!conn.near(mouseX, mouseY))
+					conn.arround(me.x, me.y, max_distance - 100);
 			});
 			stage.update(event);
 		}
