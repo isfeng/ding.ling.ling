@@ -14,6 +14,8 @@ function Profile(img, x, y, easing) {
   this.vr = Math.PI * 2 / _.random(360, 420);
   this.cosvr = Math.cos(this.vr);
   this.sinvr = Math.sin(this.vr);
+
+  // shape.addEventListener('click', handleMouseEvent);
 }
 
 Profile.prototype.draw = function(stage) {
@@ -37,3 +39,15 @@ Profile.prototype.arround = function(mouseX, mouseY, max_distance) {
   this.shape.x = mouseX + x2;
   this.shape.y = mouseY + y2;
 };
+
+Profile.prototype.near = function(mouseX, mouseY) {
+  var dx = mouseX - this.shape.x;
+  var dy = mouseY - this.shape.y;
+  return Math.sqrt(dx * dx + dy * dy) < 100;
+};
+
+// function handleMouseEvent(evt) {
+//   // output.text = "evt.target: " + evt.target + ", evt.type: " + evt.type;
+//   // stage.update();
+//   console.log(evt);
+// }
