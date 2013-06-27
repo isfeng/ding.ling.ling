@@ -3,6 +3,7 @@ function Profile(img, x, y, easing) {
   var shape = this.shape;
   shape.x = x;
   shape.y = y;
+  shape.regX = shape.regY = 40;
 
   var image = new Image();
   image.src = img;
@@ -43,7 +44,7 @@ Profile.prototype.arround = function(mouseX, mouseY, max_distance) {
 Profile.prototype.near = function(mouseX, mouseY) {
   var dx = mouseX - this.shape.x;
   var dy = mouseY - this.shape.y;
-  return Math.sqrt(dx * dx + dy * dy) < 100;
+  return Math.sqrt(dx * dx + dy * dy) < 50;
 };
 
 // function handleMouseEvent(evt) {
